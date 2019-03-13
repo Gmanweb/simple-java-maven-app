@@ -1,13 +1,10 @@
 pipeline {
 
-    agent {
-        label 'scripts'
-    }
-
     stages {
         stage('Maven Test') {
             agent {
                 docker {
+                    label 'scripts'
                     image 'maven:3.3.3'
                 }
             }
@@ -17,9 +14,10 @@ pipeline {
         }
         stage('Front-end') {
             agent {
-              docker {
-                image 'node:7-alpine' 
-              }
+                docker {
+                    label 'scripts'
+                    image 'node:7-alpine' 
+                }
             }
             steps {
                 sh 'node --version'
