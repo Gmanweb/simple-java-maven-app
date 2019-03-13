@@ -12,12 +12,23 @@ pipeline {
         stage('Maven Test') {
             agent {
                 docker {
+                    label 'scripts'
                     image 'maven:3.3.3'
-                    args "${params.MAVEN_ARGS}"
                 }
             }
             steps {
                 sh 'mvn test'
+            }
+        }
+        stage('Front-end') {
+            agent {
+              docker {
+                label 'scripts'  // both label and image
+                image 'node:7-alpine' 
+              }
+            }
+            steps {
+                sh 'node --version'
             }
         }
     }
