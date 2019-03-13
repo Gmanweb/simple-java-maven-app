@@ -1,5 +1,9 @@
 pipeline {
 
+    agent {
+        label 'scripts'
+    }
+
     stages {
         stage('Maven Test') {
             agent {
