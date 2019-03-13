@@ -5,14 +5,6 @@ pipeline {
     }
 
     stages {
-        stage('Docker Version') {
-            agent any
-            steps {
-                sh 'docker --version'
-                sh '$HOSTNAME'
-                sh 'ls -ltra'
-            }
-        }
         stage('Maven Test') {
             agent {
                 docker {
