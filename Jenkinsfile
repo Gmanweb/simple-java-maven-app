@@ -1,11 +1,20 @@
+#!groovy
+
 pipeline {
-    agent { label 'php' }
+
+    agent none
+
     stages {
-        stage("Build") {
+
+        stage('Maven Version') {
+
+            agent { label 'docker-slave'}
+
             steps {
-                echo 'Hello, PHP'
-                sh 'php -version'
+                echo 'Hello, Maven'
+                sh 'mvn -version'
             }
+
         }
     }
 }
