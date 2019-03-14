@@ -1,20 +1,11 @@
-#!groovy
-
 pipeline {
-
-    agent none
-
+    agent { label 'php' }
     stages {
-
-        stage('Maven Version') {
-
-            agent { docker 'maven:3-alpine' label 'my-defined-label'}
-
+        stage("Build") {
             steps {
-                echo 'Hello, Maven'
-                sh 'mvn -version'
+                echo 'Hello, PHP'
+                sh 'php -version'
             }
-
         }
     }
 }
