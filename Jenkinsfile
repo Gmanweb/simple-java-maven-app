@@ -1,18 +1,23 @@
 #!groovy
 
 pipeline {
-    agent any
+
+    agent {
+        label 'mvn-slave'
+    }
 
     stages {
-        stage('Maven Test') {
+        
+        stage('Maven Version') {
+
             agent {
-                docker {
-                    image 'maven:3.3.3'
-                }
+                label 'mvn-slave'
             }
+
             steps {
-                sh 'mvn test'
+                sh 'mvn -version'
             }
+
         }
     }
 }
