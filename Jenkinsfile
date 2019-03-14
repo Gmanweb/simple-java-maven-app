@@ -7,7 +7,6 @@ pipeline {
         stage('Maven Test') {
             agent {
                 docker {
-                    label 'scripts'
                     image 'maven:3.3.3'
                 }
             }
