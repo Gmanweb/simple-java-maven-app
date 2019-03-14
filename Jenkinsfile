@@ -1,4 +1,5 @@
-scripts
+#!groovy
+
 pipeline {
     agent any
 
@@ -14,6 +15,5 @@ pipeline {
                 sh 'mvn test'
             }
         }
-
     }
 }
