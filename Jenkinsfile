@@ -1,10 +1,6 @@
 scripts
 pipeline {
-    agent {
-        docker {
-            label 'scripts'
-        }
-    }
+    agent any
 
     stages {
         stage('Maven Test') {
