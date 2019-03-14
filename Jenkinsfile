@@ -2,13 +2,13 @@
 
 pipeline {
 
-    agent none
+    agent { label 'docker-slave'}
 
     stages {
 
         stage('Maven Version') {
 
-            agent { label 'docker-slave'}
+            // agent { label 'docker-slave'}
 
             steps {
                 echo 'Hello, Maven'
