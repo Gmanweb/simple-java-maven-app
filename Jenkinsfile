@@ -1,8 +1,8 @@
 pipeline {
 
-    agent {
-        label 'scripts'
-    }
+    // agent {
+    //     label 'scripts'
+    // }
 
     stages {
         stage('Maven Test') {
@@ -16,16 +16,6 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Front-end') {
-            agent {
-                docker {
-                    label 'scripts'
-                    image 'node:7-alpine' 
-                }
-            }
-            steps {
-                sh 'node --version'
-            }
-        }
+
     }
 }
