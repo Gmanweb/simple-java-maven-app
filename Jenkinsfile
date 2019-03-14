@@ -2,12 +2,10 @@
 
 pipeline {
 
-    agent {
-        label 'mvn-slave'
-    }
+    agent any
 
     stages {
-        
+
         stage('Maven Version') {
 
             agent {
