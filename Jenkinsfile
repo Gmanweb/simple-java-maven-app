@@ -1,7 +1,9 @@
+scripts
 pipeline {
-
     agent {
-        label 'scripts'
+        docker {
+            label 'scripts'
+        }
     }
 
     stages {
