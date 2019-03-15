@@ -3,7 +3,7 @@
 pipeline {
 
     agent { 
-        label 'agent_temp'
+        label 'agent_maven'
     }
 
     stages {
