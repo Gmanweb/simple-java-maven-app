@@ -14,6 +14,7 @@ pipeline {
                 sh 'ls -ltra'
                 sh 'echo $HOSTNAME'
                 sh 'mvn -version'
+                sh 'sleep 1m'
             }
         }
     }
