@@ -3,18 +3,17 @@
 pipeline {
 
     agent { 
-        label 'docker-slave'
+        label 'agent_temp'
     }
 
     stages {
 
-        stage('Maven Version') {
-
+        stage("list") {
             steps {
-                echo 'Hello, Maven'
-                sh 'mvn -version'
+                echo 'Hello, Docker'
+                sh 'ls -ltra'
+                sh 'echo $HOSTNAME'
             }
-
         }
     }
 }
